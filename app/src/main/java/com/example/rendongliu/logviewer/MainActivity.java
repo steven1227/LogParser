@@ -17,8 +17,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         File f=new File(Environment.getExternalStorageDirectory()+"/"+Environment.DIRECTORY_DOCUMENTS);
-        File[] l=f.listFiles();
-        Log.e(getApplication().toString(),l.length+"");
+        if(f.exists()) {
+            File[] l = f.listFiles();
+            Log.e(getApplication().toString(), l.toString());
+        }
     }
 
 }
