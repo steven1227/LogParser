@@ -3,4 +3,10 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="choice_array">
+        <item>All logs</item>
+        <item>Events</item>
+        <item>Pages</item>
+    </string-array>
 </resources>

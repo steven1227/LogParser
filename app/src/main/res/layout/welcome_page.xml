@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrap="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/back"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Choose the Log file"-->
+        <!--android:id="@+id/button"-->
+        <!--android:layout_centerInParent="true"></Button>-->
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textSize="20sp"
+        android:text="Choose the Log file"
+        bootstrap:bb_icon_right="fa-android"
+        bootstrap:bb_type="success"
+        android:layout_centerInParent="true"
+        />
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Clear the Log file"
+        bootstrap:bb_icon_right="fa-recycle"
+        bootstrap:bb_type="danger"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/button"
+        />
+</RelativeLayout>

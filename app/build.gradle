@@ -6,10 +6,12 @@ android {
 
     defaultConfig {
         applicationId "com.example.rendongliu.logviewer"
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        renderscriptTargetApi 22
+        renderscriptSupportModeEnabled true
     }
     buildTypes {
         release {
@@ -21,4 +23,14 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.0.+'
+    compile 'com.android.support:support-v13:22.0.+'
+    compile 'com.android.support:cardview-v7:21.0.+'
+    compile 'com.android.support:recyclerview-v7:21.0.+'
+    compile 'com.beardedhen:androidbootstrap:+'
+    compile 'com.google.code.gson:gson:2.2.+'
+    compile 'com.yalantis:phoenix:1.2.1'
+    compile 'com.yalantis:contextmenu:1.0.4'
+    compile 'jp.wasabeef:recyclerview-animators:1.2.1@aar'
+    compile 'fr.tvbarthel.blurdialogfragment:lib:2.1.4'
 }
