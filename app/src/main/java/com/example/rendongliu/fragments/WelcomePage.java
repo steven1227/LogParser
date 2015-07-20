@@ -16,6 +16,7 @@ import com.example.rendongliu.logviewer.R;
  */
 public class WelcomePage extends Fragment{
     private BootstrapButton button;
+    private BootstrapButton button2;
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -26,6 +27,7 @@ public class WelcomePage extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.welcome_page,container,false);
         button = (BootstrapButton)view.findViewById(R.id.button);
+        button2=(BootstrapButton)view.findViewById(R.id.button2);
         return view;
     }
 
