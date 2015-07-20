@@ -44,6 +44,12 @@ public class WelcomePage extends Fragment{
                 ft.commit();
             }
         });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
     }
 
 }
