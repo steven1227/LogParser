@@ -3,20 +3,15 @@ package com.example.rendongliu.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.graphics.drawable.DrawableWrapper;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.rendongliu.log.TrackEvent;
 import com.example.rendongliu.log.TrackInfo;
-import com.example.rendongliu.log.TrackLogger;
 import com.example.rendongliu.log.TrackPage;
 import com.example.rendongliu.logviewer.R;
 
@@ -30,6 +25,7 @@ public class Detail extends Fragment {
     private TextView textView3;
     private TextView textView4;
     private TextView textView5;
+    private View fullView;
 
     public static Detail newInstance(TrackInfo temp){
         Detail demo =new Detail();
@@ -48,13 +44,16 @@ public class Detail extends Fragment {
         }
         demo.setArguments(args);
         return demo;
+
+
     }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.detail_item,container,false);
+        View view= inflater.inflate(R.layout.detail_item, container, false);
         Bundle args=getArguments();
 
+        fullView=view.findViewById(R.id.detail_layout);
         textView1=(TextView)view.findViewById(R.id.line1);
         textView2=(TextView)view.findViewById(R.id.line2);
         textView3=(TextView)view.findViewById(R.id.line3);
@@ -75,6 +74,7 @@ public class Detail extends Fragment {
             }
         });
         ((TextView)view.findViewById(R.id.log_type)).setText("");
+
         return view;
     }
 
@@ -90,8 +90,5 @@ public class Detail extends Fragment {
             textView5.setText("Time: "+args.getString("Time"));
         }
     }
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+
 }

@@ -9,4 +9,5 @@
         <item>Events</item>
         <item>Pages</item>
     </string-array>
+    <string name="title_activity_intro_acitivity">Intro_acitivity</string>
 </resources>

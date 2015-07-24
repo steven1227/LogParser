@@ -1,6 +1,7 @@
 package com.example.rendongliu.fragments;
 
 
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -19,9 +20,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,7 +56,7 @@ import jp.wasabeef.recyclerview.animators.adapters.ScaleInAnimationAdapter;
  * Created by rendong.liu on 08/07/15.
  */
 public class FileFinder extends Fragment implements AdapterView.OnItemSelectedListener , Update{
-
+    private boolean loading = true;
 //    private TextView textView;
     private RecyclerView mRecyclerView;
     private MyRecyclerAdapter listadapter;
@@ -143,6 +141,7 @@ public class FileFinder extends Fragment implements AdapterView.OnItemSelectedLi
         Toolbar mToolbar = (Toolbar)view.findViewById(R.id.toolbar);
         TextView mToolBarTextView = (TextView)view.findViewById(R.id.text_view_toolbar_title);
         mToolBarTextView.setText(getArguments().getString("filename"));
+        mToolBarTextView.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "galderglynn_titling_bd.ttf"));
         ((ActionBarActivity)getActivity()).setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.btn_back);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -178,7 +177,7 @@ public class FileFinder extends Fragment implements AdapterView.OnItemSelectedLi
     @Override
     public void onActivityCreated(final Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(layoutManager);
         mPullToRefreshView.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
             @Override
@@ -190,11 +189,21 @@ public class FileFinder extends Fragment implements AdapterView.OnItemSelectedLi
             }
         });
         Log.e("Text", "how it works");
+        logtype.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "leagueGothic-Regular.otf"));
         mRecyclerView.setAdapter(scaleInAnimationAdapter);
         Log.e("3 st", "finsh?");
         if(savedInstanceState!=null){
             logtype.setText(savedInstanceState.getString("logtype"));
         }
+//        mRecyclerView.setOnScrollListener(new OnScrollListener() {
+//            @Override
+//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                int visibleItemCount = layoutManager.getChildCount();
+//                int totalItemCount = layoutManager.getItemCount();
+//                int  pastVisiblesItems = layoutManager.findFirstVisibleItemPosition();
+//                if(loading)
+//            }
+//        });
     }
 
 
@@ -289,7 +298,6 @@ public class FileFinder extends Fragment implements AdapterView.OnItemSelectedLi
                 mRecyclerView.setAdapter(scaleInAnimationAdapter);
             }
             Log.e("3 st", "can you find mRecyclerview?");
-//            spinner.setOnItemSelectedListener(FileFinder.this);
         }
     }
 

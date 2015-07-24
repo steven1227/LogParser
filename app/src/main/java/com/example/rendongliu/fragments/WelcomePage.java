@@ -47,10 +47,13 @@ public class WelcomePage extends Fragment{
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                DeleteDialog dialog = new DeleteDialog();
+                ft.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right, R.anim.slide_pop_in, R.anim.slide_pop_out);
+                dialog.show(getActivity().getSupportFragmentManager(), "dialog2");
+                ft.commit();
             }
         });
     }
-
 }
 

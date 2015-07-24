@@ -5,10 +5,8 @@ package com.example.rendongliu.fragments;
  */
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,12 +21,10 @@ import com.example.rendongliu.logviewer.R;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
 
-import fr.tvbarthel.lib.blurdialogfragment.BlurDialogFragment;
 import fr.tvbarthel.lib.blurdialogfragment.SupportBlurDialogFragment;
 
 public class SimpleDialog extends SupportBlurDialogFragment
@@ -69,6 +65,7 @@ public class SimpleDialog extends SupportBlurDialogFragment
         }else{
             a=new File[0];
         }
+
         listview.setAdapter(new BaseAdapter() {
             @Override
             public int getCount() {
